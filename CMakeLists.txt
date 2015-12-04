@@ -389,7 +389,7 @@ endfunction()
 # FIXME: separate the notions of SDKs used for compiler tools and target
 # binaries.
 if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
-  configure_sdk_unix(LINUX "Linux" "linux" "linux" "x86_64" "x86_64-unknown-linux-gnu")
+  configure_sdk_unix(LINUX "Linux" "linux" "linux" "i386" "i386-unknown-linux-gnu")
 
   set(CMAKE_EXECUTABLE_FORMAT "ELF")
 
@@ -397,10 +397,10 @@ if("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
       "Deployment OS for Swift host tools (the compiler) [linux].")
 
   set(SWIFT_HOST_VARIANT_SDK "LINUX")
-  set(SWIFT_HOST_VARIANT_ARCH "x86_64")
+  set(SWIFT_HOST_VARIANT_ARCH "i386")
 
   set(SWIFT_PRIMARY_VARIANT_SDK_default "LINUX")
-  set(SWIFT_PRIMARY_VARIANT_ARCH_default "x86_64")
+  set(SWIFT_PRIMARY_VARIANT_ARCH_default "i386")
 elseif("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
   # Set defaults.
 

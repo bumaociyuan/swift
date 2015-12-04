@@ -1118,7 +1118,7 @@ toolchains::Linux::constructInvocation(const LinkJobAction &job,
   Arguments.push_back("-Xlinker");
   Arguments.push_back("-T");
   Arguments.push_back(
-      context.Args.MakeArgString(Twine(RuntimeLibPath) + "/x86_64/swift.ld"));
+      context.Args.MakeArgString(Twine(RuntimeLibPath) + "/i386/swift.ld"));
 
   // This should be the last option, for convenience in checking output.
   Arguments.push_back("-o");

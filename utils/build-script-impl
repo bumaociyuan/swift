@@ -224,6 +224,9 @@ function set_deployment_target_based_options() {
     swiftpm_bootstrap_options=()
 
     case $deployment_target in
+        linux-i386)
+            SWIFT_HOST_VARIANT_ARCH="i386"
+            ;;
         linux-x86_64)
             SWIFT_HOST_VARIANT_ARCH="x86_64"
             ;;
@@ -743,7 +746,7 @@ CROSS_TOOLS_DEPLOYMENT_TARGETS=()
 case "$(uname -s)" in
     Linux)
         NATIVE_TOOLS_DEPLOYMENT_TARGETS=(
-            "linux-x86_64"
+            "linux-i386"
         )
         ;;
 
@@ -809,7 +812,7 @@ STDLIB_DEPLOYMENT_TARGETS=()
 case "$(uname -s)" in
     Linux)
         STDLIB_DEPLOYMENT_TARGETS=(
-            "linux-x86_64"
+            "linux-i386"
         )
         ;;
 

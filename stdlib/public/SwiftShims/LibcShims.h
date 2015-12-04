@@ -28,7 +28,7 @@ namespace swift { extern "C" {
 
 // This declaration is not universally correct.  We verify its correctness for
 // the current platform in the runtime code.
-typedef long int __swift_ssize_t;
+typedef int __swift_ssize_t;
 
 // General utilities <stdlib.h>
 // Memory management functions

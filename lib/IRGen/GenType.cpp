@@ -1434,7 +1434,7 @@ convertPrimitiveBuiltin(IRGenModule &IGM, CanType canTy) {
     case BuiltinFloatType::IEEE64:
       return RetTy{ llvm::Type::getDoubleTy(ctx), Size(8), Alignment(8) };
     case BuiltinFloatType::IEEE80:
-      return RetTy{ llvm::Type::getX86_FP80Ty(ctx), Size(16), Alignment(16) };
+      return RetTy{ llvm::Type::getX86_FP80Ty(ctx), Size(12), Alignment(4) };
     case BuiltinFloatType::IEEE128:
       return RetTy{ llvm::Type::getFP128Ty(ctx), Size(16), Alignment(16) };
     case BuiltinFloatType::PPC128:

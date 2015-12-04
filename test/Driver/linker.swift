@@ -11,7 +11,7 @@
 // RUN: %swiftc_driver -driver-print-jobs -target i386-apple-watchos2.0 %s 2>&1 > %t.simple.txt
 // RUN: FileCheck -check-prefix watchOS_SIMPLE %s < %t.simple.txt
 
-// RUN: %swiftc_driver -driver-print-jobs -target x86_64-unknown-linux-gnu -Ffoo -framework bar -Lbaz -lboo -Xlinker -undefined %s 2>&1 > %t.linux.txt
+// RUN: %swiftc_driver -driver-print-jobs -target i386-unknown-linux-gnu -Ffoo -framework bar -Lbaz -lboo -Xlinker -undefined %s 2>&1 > %t.linux.txt
 // RUN: FileCheck -check-prefix LINUX %s < %t.linux.txt
 
 // RUN: %swiftc_driver -driver-print-jobs -emit-library -target x86_64-apple-macosx10.9.1 %s -sdk %S/../Inputs/clang-importer-sdk -lfoo -framework bar -Lbaz -Fgarply -Xlinker -undefined -Xlinker dynamic_lookup -o sdk.out 2>&1 > %t.complex.txt
@@ -98,7 +98,7 @@
 // LINUX-DAG: -lswiftCore
 // LINUX-DAG: -L [[STDLIB_PATH:[^ ]+/lib/swift]]
 // LINUX-DAG: -Xlinker -rpath -Xlinker [[STDLIB_PATH]]
-// LINUX-DAG: -Xlinker -T /{{[^ ]+}}/linux/x86_64/swift.ld
+// LINUX-DAG: -Xlinker -T /{{[^ ]+}}/linux/i386/swift.ld
 // LINUX-DAG: -F foo
 // LINUX-DAG: -framework bar
 // LINUX-DAG: -L baz
